@@ -1,0 +1,20 @@
+[project]
+name = "notes-extractor"
+version = "0.1.0"
+description = "Extract highlighted text from book page photos using local Qwen-VL via Ollama"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "Pillow>=10.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+extract-notes = "notes_extractor.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/notes_extractor"]
